@@ -1,0 +1,46 @@
+/*Imagen de fondo en todas las paginas*/
+body{
+    background-image: url(../img/general/fondo.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+/*Animacion para navbar*/
+.animation-navbar{
+    position: relative;
+}
+
+.animation-navbar::before,
+.animation-navbar::after
+{
+    content: '';
+    border-bottom: 2px solid white;
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.animation-navbar::before{
+    bottom: -5px;
+    width: 90%;
+    right: 0;
+}
+
+.animation-navbar::after{
+    bottom: -10px;
+    width: 60%;
+    left: 0;
+}
+
+.animation-navbar.activo::before,
+.animation-navbar:hover::before{
+    opacity: 1;
+    width: 70%;
+}
+
+.animation-navbar.activo::after,
+.animation-navbar:hover::after{
+    opacity: 1;
+    width: 40%;
+}

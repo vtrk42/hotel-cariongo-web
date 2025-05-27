@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style (admin).css">
+    <title>Hotel Cariongo</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+      <!--------------------------------------------------->
+    <!--Barra de Navegacion-->
+    <header class="navbar navbar-expand-lg bg-dark"> <!--cabecera de la barra de navegacion-->
+      <div class="container-fluid"> <!--contenedor de la barra de navegacion-->
+        <a class="navbar-brand" href="index.html"> <!--Logo del hotel cariongo en la barra-->
+          <img class="w-100" src="../img/hotel-final.png" alt="Cariongo"> <!--imagen del hotel-->
+        </a>
+        <!--boton responsivo, aparece cuando se usa en una tablet o telefono-->
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> <!--boton-->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--lugar donde estan los links, el collapse-->
+          <li class="navbar-nav me-auto mb-2 mb-lg-0"> <!--mini contenedor de los links-->
+            <li class="nav-item" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+              <p class="h4 text-white ps-1 mb-3 animation-navbar">Configuracion</p>
+            </li>
+            <li class="navbar-nav"> <!--link de cerrar sesion-->
+              <a class="nav-item nav-link active" aria-current="page" href="index.html" onclick="logout()"><p class="h4 text-white ps-1 mb-3 animation-navbar">Cerrar sesion</p></a>
+            </li>
+          </li>
+        </div>
+      </div>
+    </header>
+    
+    <!--Barra de Navegacion-->
+    <!--------------------------------------------------->
+    
+      <!-- Offcanvas (panel deslizable) -->
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasBottomLabel">Configuración</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body small">
+          <!-- Contenido del Offcanvas (panel deslizable)-->
+          <div class="container">
+            <div class="text-center">
+            </div>
+            <div class="text-center mt-3">
+              <!-- Botones Configuracion -->
+              <button type="button" class="btn btn-primary mr-2 mb-2" data-bs-toggle="modal" data-bs-target="#cambiarLogin">Cambiar Contraseña</button>
+              <button type="button" class="btn btn-danger mb-2" onclick="borrarDatosLocalStorage()">Reestablecer Contraseña</button>
+              <button type="button" class="btn btn-danger mb-2" onclick="borrarInscritos()">Borrar Reservaciones</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Modal para cambiar la contraseña -->
+      <section>
+        <div class="modal fade" id="cambiarLogin" tabindex="-1" aria-labelledby="cambiarLoginLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="cambiarLoginLabel">Cambiar Contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form method="post">
+                  <div class="mb-3">
+                    <label for="oldUser" class="form-label">Usuario Anterior:</label>
+                    <input type="text" class="form-control" id="oldUser" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="oldPass" class="form-label">Contraseña Anterior:</label>
+                    <input type="password" class="form-control" id="oldPass" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="newUser" class="form-label">Nuevo Usuario:</label>
+                    <input type="text" class="form-control" id="newUser" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="newPassword" class="form-label">Nueva Contraseña:</label>
+                    <input type="password" class="form-control" id="newPass" required>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="cambioUserPass()">Guardar Cambios</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!--Titulo de la pagina-->
+      <div class="container-fluid bg-dark opacity-75 bg-dark opacity-75 text-white pt-2 pb-4 mb-3 mt-0"> <!--contenedor del titulo gigante-->
+        <div class="row text-center"> <!--fila principal del titulo-->
+          <div class="col-lg-12 col-md-12 col-sm-12 col-12 display-2 fw-bolder">Administrar Reservaciones</div> <!--titulo gigante-->
+        </div>
+      </div>
+    
+      <!-- Sección planilla de Preinscripción -->
+    <div class="container-fluid"> <!--contenedor de la tabla-->
+      <div class="table-responsive"> <!--tabla responsiva-->
+        <table class="table table-striped-columns"> <!--tabla-->
+          <thead> <!--cabecera de la tabla-->
+            <tr> <!--elementos de la tabla-->
+              <th class="align-middle">Nombre</th>
+              <th class="align-middle">Apellidos</th>
+              <th class="align-middle">Cédula</th>
+              <th class="align-middle">Edad</th>
+              <th class="align-middle">Email</th>
+              <th class="align-middle">Teléfono</th>
+              <th class="align-middle">Habitacion Solicitada</th>
+            </tr>
+          </thead>
+          <tbody id="tablaInscritos"></tbody> <!--cuerpo de la tabla-->
+        </table>
+      </div>
+    </div>
+
+    <!--------------------------------------------------->
+    <!--Recursos JavaScript-->
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!--Recursos JavaScript-->
+    <!--------------------------------------------------->
+
+  </body>
+</html>
+
+

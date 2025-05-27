@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Cariongo</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <!--------------------------------------------------->
+    <!--Barra de Navegacion-->
+    <header class="navbar navbar-expand-lg bg-dark"> <!--cabecera de la barra de navegacion-->
+      <div class="container-fluid"> <!--contenedor de la barra de navegacion-->
+        <a class="navbar-brand" href="index.html"> <!--Logo del hotel cariongo en la barra-->
+          <img class="w-100" src="../img/hotel-final.png" alt="Cariongo"> <!--imagen del hotel-->
+        </a>
+        <!--boton responsivo, aparece cuando se usa en una tablet o telefono-->
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> <!--boton-->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--lugar donde estan los links, el collapse-->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"> <!--link de nosotros-->
+              <a class="nav-link active" aria-current="page" href="about_us.html"><p class="h4 text-white ps-1 animation-navbar">Sobre Nosotros</p></a>
+            </li>
+            <li class="nav-item"> <!--link de habitaciones-->
+              <a class="nav-link active" aria-current="page" href="rooms.html"><p class="h4 text-white ps-1 animation-navbar">Habitaciones</p></a>
+            </li>
+            <li class="nav-item"> <!--link de contacto-->
+              <a class="nav-link active" aria-current="page" href="contact.html"><p class="h4 text-white ps-1 animation-navbar">Contacto</p></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-2 mb-2"> <!--icono del inicio de sesion/registro-->
+            <li class="nav-item"> <!--un item mas como el de nosotros, contacto, etc-->
+              <!--boton que le da la funcion de poder precionar a la persona-->
+              <button class="btn btn-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img height="50" src="../img/socials/persona-logo.png" alt=""></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </header>
+    <!--Barra de Navegacion-->
+    <!--------------------------------------------------->
+    <!--contenedor del inicio de sesion-->
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered"> <!--el contenedor centrado-->
+        <div class="modal-content"> <!--contenido del inicio de sesion-->
+          <div class="modal-header"> <!--Cabezera del inicio de sesion-->
+            <h1 class="modal-title fs-5 text-dark" id="loginModalLabel">Iniciar Sesion</h1> <!--titulo-->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!--boton que cierra el inicio de sesion y el registro-->
+          </div>
+          <div class="modal-body"> <!--cuerpo del inicio sesion-->
+          <form id="loginForm">
+            <!--cuerpo del usuario-->
+            <div class="input-group mb-3"> <!--cuerpo-->
+              <span class="input-group-text"><img height="40" src="../../node_modules/bootstrap-icons/icons/people.svg" alt=""></span> <!--logo del usuario-->
+              <div class="form-floating"> <!--donde va a escribir el usuario-->
+                <input type="text" class="form-control" id="username" placeholder="Usuario"> <!--lo que aparece cuando la caja esta vacia-->
+                <label for="username">Usuario</label><!--similar a los de arriba: aparece cuando la caja esta vacia-->
+              </div>
+            </div>
+            <!--cuerpo de la contraseña-->
+            <div class="input-group mb-3"> <!--cuerpo-->
+              <span class="input-group-text"><img height="40" src="../../node_modules/bootstrap-icons/icons/key.svg" alt=""></span> <!--logo de la contraseña-->
+              <div class="form-floating"> <!--donde va a escribir l contraseña-->
+                <input type="password" class="form-control" id="password" placeholder="Contraseña"> <!--lo que aparece cuando la caja esta vacia-->
+                <label for="password">Contraseña</label><!--similar a los de arriba: aparece cuando la caja esta vacia-->
+              </div>
+            </div>
+          </form>
+            <div class="text-center"><button class="btn btn-dark" onclick="validacionLogin()">Iniciar Sesion</button></div><br> <!--boton para iniciar sesion.-->
+            <!--Redireccion en la misma pagina, para que te registres-->
+          </div>
+        </div>
+      </div>
+    </div> <!--fin del contenedor del inicio de sesion-->
+
+    <!--Inicio: Contacto-->
+    <div
+      class="container col-lg-4 col-md-6 col-sm-12 col-xs-12 bg-light pb-3 mb-3 mt-3 rounded"
+    >
+      <!--Titulo-->
+      <h2 class="text-center pb-5 pt-3">Contactanos</h2>
+      <!--Titulo-->
+
+      <!--Contacto: Nombre-->
+      <div class="row">
+        <div class="col-2">
+          <img
+            class="w-100"
+            src="../../node_modules/bootstrap-icons/icons/person-circle.svg"
+            alt="relleno"
+          />
+        </div>
+        <div class="col-10">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput1"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput1">Nombre</label>
+          </div>
+        </div>
+      </div>
+      <!--Contacto: Nombre-->
+
+      <!--Contacto: Correo electronico-->
+      <div class="row">
+        <div class="col-2">
+          <img
+            class="w-100"
+            src="../../node_modules/bootstrap-icons/icons/envelope.svg"
+            alt="relleno"
+          />
+        </div>
+        <div class="col-10">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="floatingInput2"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput2">Correo Electronico </label>
+          </div>
+        </div>
+      </div>
+      <!--Contacto: Correo electronico-->
+
+      <!--Contacto: Telefono-->
+      <div class="row">
+        <div class="col-2">
+          <img
+            class="w-100"
+            src="../../node_modules/bootstrap-icons/icons/telephone.svg"
+            alt="relleno"
+          />
+        </div>
+        <div class="col-10">
+          <div class="form-floating mb-3">
+            <input
+              type="number"
+              class="form-control"
+              id="floatingInput3"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput3">Telefono </label>
+          </div>
+        </div>
+      </div>
+      <!--Contacto: Telefono-->
+
+      <!--Contacto: Mensaje-->
+      <div class="row pb-4">
+        <div class="col-2">
+          <img
+            class="w-100"
+            src="../../node_modules/bootstrap-icons/icons/chat-dots.svg"
+            alt="relleno"
+          />
+        </div>
+        <div class="col-10">
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              id="floatingTextarea"
+            ></textarea>
+            <label for="floatingTextarea">Mensaje</label>
+          </div>
+        </div>
+      </div>
+      <!--Contacto: Mensaje-->
+
+      <!--Contacto: notificaciones-->
+      <div class="mb-4 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1"
+          >Acepta recibir notificaciones cuando salgan nuevos productos</label
+        >
+      </div>
+      <!--Contacto: Notificaciones-->
+
+      <!--Contacto: Boton enviar-->
+      <button type="submit" class="btn btn-dark btn-lg mt-1 mb-3 text-center">
+        Enviar</button
+      ><br />
+      <!--Contacto: Boton enviar-->
+
+      <!--Contacto: Mapa + boton-->
+      <p class="d-inline-flex gap-1">
+        <a
+          class="btn btn-primary btn-lg"
+          data-bs-toggle="collapse"
+          href="#collapseExample"
+          role="button"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          Mostrar Mapa
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          <div class="container text-center">
+            <iframe
+              class="w-100"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d494.17496840847497!2d-72.23601212994369!3d7.747354631911392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66139b8886a9fd%3A0xf47db513d6fe705c!2sHotel%20Cariongo%20II%20c.a!5e0!3m2!1ses!2sve!4v1713568335366!5m2!1ses!2sve"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <!--Contacto: Mapa + boton-->
+    </div>
+    <!--Fin: Contacto-->
+
+    <!--------------------------------------------------->
+    <!--Pie de pagina-->
+    
+    <footer class="container-fluid bg-dark mt-3 "> <!--Contenedor del pie de pagina-->
+      <div class="row"> <!--fila principal del pie de pagina-->
+        <div class="col-lg-5 col-md-6 col-sm-12 text-center mb-4 mt-4"> <!--Columna de la seccion del logo-->
+          <img src="../img/hotel-final-2.png" alt="Hotel-cariongo" height="200"> <!--Logo-->
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 text-white"> <!--Columna de la seccion de comunicate-->
+          <div class="row"> <!--fila del titulo-->
+            <p class="h2 text-white mt-4 pb-4">Comunicate</p> <!--Titulo-->
+          </div>
+          <div class="row"> <!--fila de numero de telefono-->
+            <div class="col mb-3"> <!--columna del numero de telefono-->
+              <img src="../img/socials/telefono-logo.png" alt="telefono" height="40"> <span><p class="h5 align-middle d-inline">0424-706-2944</p></span> <!--imagen y numero del telefono-->
+            </div>
+          </div>
+          <div class="row"> <!--fila del correo electronico-->
+            <div class="col mb-3"> <!--columna del correo electronico-->
+              <img src="../img/socials/correo-logo.png" alt="telefono" height="40"> <span><p class="h5 align-middle d-inline">hotel.cariongo@gmail.com</p></span> <!--imagen y el correo electronico-->
+            </div>
+          </div>
+          <div class="row"> <!--fila de la ubicacion-->
+            <div class="col mb-3"> <!--columna de la ubicacion-->
+              <img src="../img/socials/ubicacion-logo.png" alt="telefono" height="40"> <!--imagen de la ubicacion-->
+
+              <!--Boton de la ubicacion-->
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"><p class="h5">Ver Ubicacion</p></button>
+              <!--pantalla emergente con la ubicacion-->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-3 text-dark" id="exampleModalLabel">Ubicacion</h1> <!--titulo de la pantalla, header-->
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> <!--donde va el mapa, body-->
+                      <!--Mapa:-->
+                      <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d494.17496840847497!2d-72.23601212994369!3d7.747354631911392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66139b8886a9fd%3A0xf47db513d6fe705c!2sHotel%20Cariongo%20II%20c.a!5e0!3m2!1ses!2sve!4v1713568335366!5m2!1ses!2sve" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="modal-footer"> <!--boton salir, el footer-->
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--Aqui termina el boton de la ubicacion-->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 pb-4 pt-4"> <!--Columna de la seccion de las redes sociales-->
+          <div class="row"> <!--fila del titulo-->
+            <div class="col"> <!--titulo-->
+              <p class="h2 text-white text-center pe-4 pb-5">Redes Sociales</p>
+            </div>
+            <div class="row"> <!--fila de las redes sociales-->
+            <div class="col text-center"> <!--columna de las redes sociales-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/facebook-logo.png" alt="facebook" height="50"></a> <!--facebook-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/twitter-logo.png" alt="twitter" height="50"></a> <!--twitter-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/instagram-logo.png" alt="instagram" height="50"></a> <!--instagram-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/tiktok-logo.png" alt="tiktok" height="50"></a> <!--tiktok-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+        
+    <!--Fin Pie de pagina-->
+    <!--------------------------------------------------->
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!--Recursos JavaScript-->
+    <!--------------------------------------------------->
+    
+  </body>
+</html>

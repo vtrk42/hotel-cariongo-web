@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Cariongo</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <!--------------------------------------------------->
+    <!--Barra de Navegacion-->
+    <header class="navbar navbar-expand-lg bg-dark"> <!--cabecera de la barra de navegacion-->
+      <div class="container-fluid"> <!--contenedor de la barra de navegacion-->
+        <a class="navbar-brand" href="index.html"> <!--Logo del hotel cariongo en la barra-->
+          <img class="w-100" src="../img/hotel-final.png" alt="Cariongo"> <!--imagen del hotel-->
+        </a>
+        <!--boton responsivo, aparece cuando se usa en una tablet o telefono-->
+        <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> <!--boton-->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!--lugar donde estan los links, el collapse-->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"> <!--link de nosotros-->
+              <a class="nav-link active" aria-current="page" href="#about_us"><p class="h4 text-white ps-1 animation-navbar">Sobre Nosotros</p></a>
+            </li>
+            <li class="nav-item"> <!--link de habitaciones-->
+              <a class="nav-link active" aria-current="page" href="rooms.html"><p class="h4 text-white ps-1 animation-navbar">Habitaciones</p></a>
+            </li>
+            <li class="nav-item"> <!--link de contacto-->
+              <a class="nav-link active" aria-current="page" href="contact.html"><p class="h4 text-white ps-1 animation-navbar">Contacto</p></a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-2 mb-2"> <!--icono del inicio de sesion/registro-->
+            <li class="nav-item"> <!--un item mas como el de nosotros, contacto, etc-->
+              <!--boton que le da la funcion de poder presionar a la persona-->
+              <button class="btn btn-link" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"><img height="50" src="../img/socials/persona-logo.png" alt=""></button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </header>
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered"> <!--el contenedor centrado-->
+        <div class="modal-content"> <!--contenido del inicio de sesion-->
+          <div class="modal-header"> <!--cabecera del inicio de sesion-->
+            <h1 class="modal-title fs-5 text-dark" id="loginModalLabel">Iniciar Sesion</h1> <!--titulo-->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> <!--boton que cierra el inicio de sesion y el registro-->
+          </div>
+          <div class="modal-body"> <!--cuerpo del inicio sesion-->
+          <form id="loginForm">
+            <!--cuerpo del usuario-->
+            <div class="input-group mb-3"> <!--cuerpo-->
+              <span class="input-group-text"><img height="40" src="../../node_modules/bootstrap-icons/icons/people.svg" alt=""></span> <!--logo del usuario-->
+              <div class="form-floating"> <!--donde va a escribir el usuario-->
+                <input type="text" class="form-control" id="username" placeholder="Usuario"> <!--lo que aparece cuando la caja esta vacia-->
+                <label for="username">Usuario</label><!--similar a los de arriba: aparece cuando la caja esta vacia-->
+              </div>
+            </div>
+            <!--cuerpo de la contraseña-->
+            <div class="input-group mb-3"> <!--cuerpo-->
+              <span class="input-group-text"><img height="40" src="../../node_modules/bootstrap-icons/icons/key.svg" alt=""></span> <!--logo de la contraseña-->
+              <div class="form-floating"> <!--donde va a escribir l contraseña-->
+                <input type="password" class="form-control" id="password" placeholder="Contraseña"> <!--lo que aparece cuando la caja esta vacia-->
+                <label for="password">Contraseña</label><!--similar a los de arriba: aparece cuando la caja esta vacia-->
+              </div>
+            </div>
+          </form>
+            <div class="text-center"><button class="btn btn-dark" onclick="validacionLogin()">Iniciar Sesion</button></div><br><!--boton para iniciar sesion.-->
+            <!--Redireccion en la misma pagina, para que te registres-->
+          </div>
+        </div>
+      </div>
+    </div> 
+    
+    <!--Barra de Navegacion-->
+    <!--------------------------------------------------->
+    
+    <!--Carrusel-->
+    
+    <img src="../img/general/portada-1.jpg" class="d-block w-100" alt="Bienvenida"> <!--imagen-->      
+    
+    <!--Fin del Carrusel-->
+    <!--------------------------------------------------->
+  
+    <!--------------------------------------------------->
+    <!--seccion de posible galeria-->
+    <div class="container-fluid bg-dark border-0 mt-0"> <!--Contenedor de la seccion bienvenido-->
+      <div class="row"> <!--fila principal de la seccion-->
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 mb-4 pt-3 mb-3"> <!--columna con una imagen-->
+          <img class="w-100 border border-2 border-white" src="../img/general/lobby.jpg" alt=""> <!--Imagen-->
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-6 mt-4 pt-3 mb-3"> <!--columna con una imagen-->
+          <img class="w-100 border border-2 border-white" src="../img/general/pasillo.jpg" alt=""> <!--Imagen-->
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-3"> <!--columna con contenido-->
+          <p class="h1 text-center text-white" id="about_us">Hotel Cariongo II</p> <!--titulo principal-->
+          <!--Historia del hotel-->
+          <p class="mt-3 ms-4 me-4 h2 text-white">Un refugio de encanto. En el corazón del estado Táchira, Venezuela, se encuentra el Hotel Cariongo, un oasis de paz y tranquilidad que te invita a descubrir la magia del Táchira. Su arquitectura colonial y su ambiente cálido te harán sentir como en casa desde el momento en que llegues.</p>
+          <div class="text-center mt-5"><a href="about_us.html"><button class="btn btn-success">Leer Más</button></a></div><br>
+        </div>
+      </div>
+    </div>
+    <!--Fin seccion de posible galeria-->
+    <!--------------------------------------------------->
+
+    <!--------------------------------------------------->
+    <!--seccion de servicios-->
+    <div class="container-fluid bg-white mt-0"> <!--contenedor de los servicios-->
+      <div class="row"> <!--fila del titulo-->
+        <div class="col-lg-12 col-md-12 col-ms-12 col-12 text-center text-dark mb-3"> <!--columna del titulo-->
+          <p class="display-3">Facilidades y Servicios</p> <!--titulo-->
+        </div>
+        <div class="row"> <!--fila de los servicios-->
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-3"> <!--columna de servicio-->
+            <!--Imagen y texto del servicio-->
+            <img height="70" src="../img/services/wifi.png" alt=""> <p class="text-dark d-inline h5 ms-4">Servicio de Wi-Fi en la recepción</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-3"> <!--columna de servicio-->
+            <!--Imagen y texto del servicio-->
+            <img height="70" src="../img/services/agua.png" alt=""> <p class="text-dark d-inline h5 ms-4">Servicio de Agua</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-3"> <!--columna de servicio-->
+            <!--Imagen y texto del servicio-->
+            <img height="70" src="../img/services/servicio-al-cliente.png" alt=""> <p class="text-dark d-inline h5 ms-4">Atención las 24 horas del día</p>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-12 mb-3"> <!--columna de servicio-->
+            <!--Imagen y texto del servicio-->
+            <img height="70" src="../img/services/estacionamiento.png" alt=""> <p class="text-dark d-inline h5 ms-4">Estacionamiento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Fin de seccion de servicios-->
+    <!--------------------------------------------------->
+
+    <!--------------------------------------------------->
+    <!--seccion de opiniones-->
+    <div class="container-fluid bg-black bg-opacity-50"> <!--contenedor de las opiniones-->
+      <div class="row"> <!--fila del titulo-->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center"> <!--columna del titulo-->
+          <h1 class="display-3 text-white border-light">Opiniones</h1> <!--titulo-->
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-5"> <!--columna del texto descriptivo del titulo-->
+          <p class="h5 text-white">Algunas opiniones de nuestros huespedes!</p> <!--textazo-->
+        </div>
+      </div>
+      <div class="row"> <!--fila de opiniones-->
+        <!--opinion 1-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center"> <!--columna de la opinio-->
+          <img class="rounded-circle" height="150" src="../img/pfp/pfp-1.jpg" alt=""> <!--imagen-->
+          <p class="h2 text-white">Dave Jhonson</p> <!--nombre del opinando-->
+          <!--Su opinion-->
+          <p class="h6 text-white">Me gustó el trabajo que hacen todos los trabajadores. Siempre están dispuestos a ayudarte, con una sonrisa en la cara y mucho respeto. ¡Lo recomiendo! También el servicio de habitación es excepcional.</p>
+        </div>
+        <!--opinion 2-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center"> <!--columna de la opinio-->
+          <img class="rounded-circle" height="150" src="../img/pfp/pfp-2.jpg" alt=""> <!--imagen-->
+          <p class="h2 text-white">Axel Duran</p> <!--nombre del opinando-->
+          <!--Su opinion-->
+          <p class="h6 text-white">Los miembros del staff son muy atentos y amigables. Su hospitalidad hizo que nuestra estancia fuera aún más agradable.</p>
+        </div>
+        <!--opinion 3-->
+        <div class="col-lg-4 col-md-4 col-sm-12 col-12 text-center"> <!--columna de la opinio-->
+          <img class="rounded-circle" height="150" src="../img/pfp/pfp-3.jpg" alt=""> <!--imagen-->
+          <p class="h2 text-white">Sofia Castillo</p> <!--nombre del opinando-->
+          <!--Su opinion-->
+          <p class="h6 text-white">La cama y la terraza son fenomenales. Disfrutamos de una vista espectacular desde la terraza. ¡Volveremos sin dudas!.</p>
+        </div>
+      </div>
+    </div>
+    <!--Fin seccion de opiniones-->
+    <!--------------------------------------------------->
+
+    <!--------------------------------------------------->
+    <!--Pie de pagina-->
+    
+    <footer class="container-fluid bg-dark"> <!--Contenedor del pie de pagina-->
+      <div class="row"> <!--fila principal del pie de pagina-->
+        <div class="col-lg-5 col-md-6 col-sm-12 text-center mb-4 mt-4"> <!--Columna de la seccion del logo-->
+          <img src="../img/hotel-final-2.png" alt="Hotel-cariongo" height="200"> <!--Logo-->
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 text-white"> <!--Columna de la seccion de comunicate-->
+          <div class="row"> <!--fila del titulo-->
+            <p class="h2 text-white mt-4 pb-4">Comunicate</p> <!--Titulo-->
+          </div>
+          <div class="row"> <!--fila de numero de telefono-->
+            <div class="col mb-3"> <!--columna del numero de telefono-->
+              <img src="../img/socials/telefono-logo.png" alt="telefono" height="40"> <span><p class="h5 align-middle d-inline">0424-706-2944</p></span> <!--imagen y numero del telefono-->
+            </div>
+          </div>
+          <div class="row"> <!--fila del correo electronico-->
+            <div class="col mb-3"> <!--columna del correo electronico-->
+              <img src="../img/socials/correo-logo.png" alt="telefono" height="40"> <span><p class="h5 align-middle d-inline">hotel.cariongo@gmail.com</p></span> <!--imagen y el correo electronico-->
+            </div>
+          </div>
+          <div class="row"> <!--fila de la ubicacion-->
+            <div class="col mb-3"> <!--columna de la ubicacion-->
+              <img src="../img/socials/ubicacion-logo.png" alt="telefono" height="40"> <!--imagen de la ubicacion-->
+
+              <!--Boton de la ubicacion-->
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"><p class="h5">Ver Ubicacion</p></button>
+              <!--pantalla emergente con la ubicacion-->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-3 text-dark" id="exampleModalLabel">Ubicacion</h1> <!--titulo de la pantalla, header-->
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body"> <!--donde va el mapa, body-->
+                      <!--Mapa:-->
+                      <iframe class="w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d494.17496840847497!2d-72.23601212994369!3d7.747354631911392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66139b8886a9fd%3A0xf47db513d6fe705c!2sHotel%20Cariongo%20II%20c.a!5e0!3m2!1ses!2sve!4v1713568335366!5m2!1ses!2sve" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="modal-footer"> <!--boton salir, el footer-->
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div> <!--Aqui termina el boton de la ubicacion-->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 pb-4 pt-4"> <!--Columna de la seccion de las redes sociales-->
+          <div class="row"> <!--fila del titulo-->
+            <div class="col"> <!--titulo-->
+              <p class="h2 text-white text-center pe-4 pb-5">Redes Sociales</p>
+            </div>
+            <div class="row"> <!--fila de las redes sociales-->
+            <div class="col text-center"> <!--columna de las redes sociales-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/facebook-logo.png" alt="facebook" height="50"></a> <!--facebook-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/twitter-logo.png" alt="twitter" height="50"></a> <!--twitter-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/instagram-logo.png" alt="instagram" height="50"></a> <!--instagram-->
+              <a href="#"><img class="me-2 tamaños" src="../img/socials/tiktok-logo.png" alt="tiktok" height="50"></a> <!--tiktok-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!--Fin Pie de pagina-->
+    <!--------------------------------------------------->
+
+    <!--------------------------------------------------->
+    <!--Recursos JavaScript-->
+
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!--Recursos JavaScript-->
+    <!--------------------------------------------------->
+    
+  </body>
+</html>
